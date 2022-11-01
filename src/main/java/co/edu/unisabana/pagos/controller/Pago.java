@@ -1,4 +1,4 @@
-package co.edu.unisabana.bancocliente.suscriptor.data;
+package co.edu.unisabana.pagos.controller;
 
 import java.io.Serializable;
 
