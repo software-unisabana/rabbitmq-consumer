@@ -9,8 +9,13 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class Consumer {
 
-    @RabbitListener(queues = {"${unisabana.pagos.notificar}"})
-    public void receive(@Payload String pago) {
-        log.info("Escuche de la cola unisabana.pagos.notificar {}", pago);
+    @RabbitListener(queues = {"cafeteria_embarcadero"})
+    public void atenderEstudianteCafeteriaEmbarcadero(@Payload String estudiante) {
+        log.info("Escuche de la cola cafeteria_embarcadero {}", estudiante);
+    }
+
+    @RabbitListener(queues = {"cafeteria_escuela"})
+    public void atenderEstudianteCafeteriaEscuela(@Payload String estudiante) {
+        log.info("Escuche de la cola escuela {}", estudiante);
     }
 }
